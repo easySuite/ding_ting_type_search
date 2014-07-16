@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * @file
+ *
+ */
 
 /**
  * Implements hook_ctools_plugin_directory().
@@ -11,21 +14,47 @@ function easyddb_search_ext_ctools_plugin_directory($module, $plugin) {
 }
 
 /**
- * Implements hook_submit().
+ * Implements hook_block_info().
+ */
+function  easyddb_search_ext_block_info() {
+  $blocks['search_ext'] = array(
+    'info' => t('Search extension'),
+    'cache' => DRUPAL_CACHE_GLOBAL,
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function easyddb_search_ext_block_view($delta = '') {
+  $block = array();
+  switch ($delta) {
+    case 'search_ext':
+      $block['title'] = t('Search extention pane');
+      $block['content'] = drupal_get_form('easyddb_search_ext_form');
+      break;
+  }
+
+  return $block;
+}
+
+/**
  * Form for search extension.
  */
 function easyddb_search_ext_form($form, &$form_state) {
   $form = array();
 
-  $avialable = variable_get('ding_availability_holdings_types', _ding_availability_holdings_default_types());
+  $reservables = variable_get('ting_reservable_types', _ting_default_reservable_types());
   $options = array();
-  //its needed for correct format of options
-  foreach ($avialable as $k => $v) {
+  //Its needed for correct format of options.
+  foreach ($reservables as $k => $v) {
     $options[$v] = $v;
   }
-  $form['categories'] = array(
+  $form['types'] = array(
     '#type' => 'select',
-    '#title' => t('Category'),
+    '#title' => t('Types'),
     '#options' => $options,
     '#empty_option' => t('-None-')
   );
@@ -41,12 +70,16 @@ function easyddb_search_ext_form($form, &$form_state) {
 }
 
 /**
- * Implements hook_submit().
+ * Submit handler for search extension form.
  */
 function easyddb_search_ext_submit($form, &$form_state) {
-  if ($form_state['triggering_element']['#name'] == 'search_ext'
-      && isset($form_state['values']["categories"])
-      && !empty($form_state['values']["categories"])) {
-    drupal_goto("search/ting", array('query' => array('facets[]' => "facet.type:{$form_state['values']['categories']}")));
+  $submit = $form_state['triggering_element']['#name'];
+  if ($submit == 'search_ext' && isset($form_state['values']['types']) && !empty($form_state['values']['types'])) {
+    $type = $form_state['values']['types'];
+    drupal_goto("search/ting", array(
+      'query' => array(
+        'facets[]' => "facet.type:{$type}"
+      )
+    ));
   }
 }
