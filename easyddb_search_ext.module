@@ -1,0 +1,52 @@
+<?php
+
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function easyddb_search_ext_ctools_plugin_directory($module, $plugin) {
+    if ($module == 'ctools' && !empty($plugin)) {
+      return "plugins/$plugin";
+  }
+}
+
+/**
+ * Implements hook_submit().
+ * Form for search extension.
+ */
+function easyddb_search_ext_form($form, &$form_state) {
+  $form = array();
+
+  $avialable = variable_get('ding_availability_holdings_types', _ding_availability_holdings_default_types());
+  $options = array();
+  //its needed for correct format of options
+  foreach ($avialable as $k => $v) {
+    $options[$v] = $v;
+  }
+  $form['categories'] = array(
+    '#type' => 'select',
+    '#title' => t('Category'),
+    '#options' => $options,
+    '#empty_option' => t('-None-')
+  );
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#name' => 'search_ext',
+    '#value' => t('Search'),
+    '#submit' => array('easyddb_search_ext_submit'),
+  );
+
+  return $form;
+}
+
+/**
+ * Implements hook_submit().
+ */
+function easyddb_search_ext_submit($form, &$form_state) {
+  if ($form_state['triggering_element']['#name'] == 'search_ext'
+      && isset($form_state['values']["categories"])
+      && !empty($form_state['values']["categories"])) {
+    drupal_goto("search/ting", array('query' => array('facets[]' => "facet.type:{$form_state['values']['categories']}")));
+  }
+}

@@ -1,0 +1,7 @@
+name = EasyDDB Search extension
+description = Creates pane for search extension
+core = 7.x
+package = easyddb
+version = 7.x-0.1
+dependencies[] = ctools
+dependencies[] = panels
