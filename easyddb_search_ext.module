@@ -5,15 +5,6 @@
  */
 
 /**
- * Implements hook_ctools_plugin_directory().
- */
-function easyddb_search_ext_ctools_plugin_directory($module, $plugin) {
-    if ($module == 'ctools' && !empty($plugin)) {
-      return "plugins/$plugin";
-  }
-}
-
-/**
  * Implements hook_block_info().
  */
 function  easyddb_search_ext_block_info() {
@@ -48,7 +39,7 @@ function easyddb_search_ext_form($form, &$form_state) {
 
   $reservables = variable_get('ting_reservable_types', _ting_default_reservable_types());
   $options = array();
-  //Its needed for correct format of options.
+  // Its needed for correct format of options.
   foreach ($reservables as $k => $v) {
     $options[$v] = $v;
   }
