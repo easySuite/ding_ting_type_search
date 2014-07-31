@@ -73,7 +73,8 @@ function easyddb_search_ext_submit($form, &$form_state) {
     $type = $form_state['values']['types'];
     drupal_goto("search/ting", array(
       'query' => array(
-        'facets[]' => "facet.type:{$type}"
+        'sort' => "date_descending",
+        'facets[]' => "facet.type:{$type}",
       )
     ));
   }
