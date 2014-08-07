@@ -53,7 +53,7 @@ function easyddb_search_ext_form($form, &$form_state) {
     '#empty_option' => t('Select a type'),
     '#prefix' => '<div class="select-wrap">',
     '#suffix' => '</div>',
-    '#attributes' => array('onchange' => 'form.submit(types)'),
+    '#attributes' => array('class' => array('search-ext-select')),
   );
 
   $form['submit'] = array(
@@ -61,7 +61,8 @@ function easyddb_search_ext_form($form, &$form_state) {
     '#name' => 'search_ext',
     '#value' => t('Search'),
     '#submit' => array('easyddb_search_ext_submit'),
-    '#attributes' => array('style' => 'display: none;'),
+    '#prefix' => '<div class="submit-wrap">',
+    '#suffix' => '</div>',
   );
 
   $form['#attached']['js'] = array(
