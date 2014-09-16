@@ -61,8 +61,7 @@ function easyddb_search_ext_form($form, &$form_state) {
     '#name' => 'search_ext',
     '#value' => t('Search'),
     '#submit' => array('easyddb_search_ext_submit'),
-    '#prefix' => '<div class="submit-wrap">',
-    '#suffix' => '</div>',
+    '#attributes' => array('style' => 'display: none;'),
   );
 
   $form['#attached']['js'] = array(
