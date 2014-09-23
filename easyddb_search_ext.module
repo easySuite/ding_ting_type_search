@@ -43,11 +43,17 @@ function easyddb_search_ext_form($form, &$form_state) {
   foreach ($reservables as $k => $v) {
     $options[$v] = $v;
   }
+  // Sort alphabetical, ASC.
+  asort($options);
+
   $form['types'] = array(
     '#type' => 'select',
-    '#title' => t('Types'),
+    '#title' => t('Search by type of material:'),
     '#options' => $options,
-    '#empty_option' => t('-None-')
+    '#empty_option' => t('Select a type'),
+    '#prefix' => '<div class="select-wrap">',
+    '#suffix' => '</div>',
+    '#attributes' => array('class' => array('search-ext-select')),
   );
 
   $form['submit'] = array(
@@ -55,6 +61,12 @@ function easyddb_search_ext_form($form, &$form_state) {
     '#name' => 'search_ext',
     '#value' => t('Search'),
     '#submit' => array('easyddb_search_ext_submit'),
+    '#attributes' => array('style' => 'display: none;'),
+  );
+
+  $form['#attached']['js'] = array(
+    drupal_get_path('module', 'easyddb_search_ext') . '/js/easyddb_search_ext.js',
+    drupal_get_path('module', 'ting_search') . '/js/ting_search_overlay.js',
   );
 
   return $form;
@@ -67,9 +79,10 @@ function easyddb_search_ext_submit($form, &$form_state) {
   $submit = $form_state['triggering_element']['#name'];
   if ($submit == 'search_ext' && isset($form_state['values']['types']) && !empty($form_state['values']['types'])) {
     $type = $form_state['values']['types'];
-    drupal_goto("search/ting", array(
+    drupal_goto("search/ting/facet.type={$type}", array(
       'query' => array(
-        'facets[]' => "facet.type:{$type}"
+        'sort' => "date_descending",
+        'facets[]' => "facet.type:{$type}",
       )
     ));
   }
