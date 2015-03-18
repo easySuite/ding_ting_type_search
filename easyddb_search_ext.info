@@ -1,8 +1,8 @@
 name = Search extension
-description = Creates pane for search extension
+description = Creates pane for search extension.
 core = 7.x
 package = easyDDB
-version = 7.x-1.0.1
+version = 7.x-2.0.0
 dependencies[] = ctools
 dependencies[] = panels
 
