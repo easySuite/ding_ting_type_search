@@ -83,6 +83,7 @@ function easyddb_search_ext_submit($form, &$form_state) {
       'query' => array(
         'sort' => "date_descending",
         'facets[]' => "facet.type:{$type}",
+        'source' => 'external',
       )
     ));
   }
