@@ -1,0 +1,85 @@
+/**
+ * Mixins
+ *
+ * @author magnify
+ */
+/* Breakpoints
+   ========================================================================== */
+/* Media query
+   ========================================================================== */
+/* Breakpoints
+   ========================================================================== */
+/* Typography mixins
+ *
+ * These are mixins to allow for use in media queries
+   ========================================================================== */
+/* Availability
+   ========================================================================== */
+/* Pseudo arrow
+ *
+ * Usage example: pseudo-arrow(10px, #000, top, center, $offset: 20px)
+   ========================================================================== */
+/* Spacing variables
+   ========================================================================== */
+/* Colors variables
+   ========================================================================== */
+/* Font variables
+   ========================================================================== */
+.pane-easyddb-search-ext-search-ext {
+  overflow: hidden;
+  margin: 20px 0;
+  padding: 10px 20px;
+  background-color: #fff;
+}
+.pane-easyddb-search-ext-search-ext select {
+  height: 42px;
+  line-height: 42px;
+  -webkit-appearance: menulist-button;
+  min-width: 0;
+  width: 100%;
+  max-width: 440px;
+}
+.pane-easyddb-search-ext-search-ext .submit-wrap input {
+  min-height: 42px;
+  height: auto !important;
+  height: 42px;
+}
+.pane-easyddb-search-ext-search-ext label {
+  text-align: left;
+  font-size: 160%;
+}
+@media only screen and (max-width: 768px) {
+  .pane-easyddb-search-ext-search-ext label {
+    margin-bottom: 10px;
+  }
+}
+@media only screen and (min-width: 769px) {
+  .pane-easyddb-search-ext-search-ext form > div {
+    display: table;
+    width: 100%;
+    text-align: right;
+  }
+  .pane-easyddb-search-ext-search-ext .select-wrap,
+  .pane-easyddb-search-ext-search-ext .submit-wrap {
+    display: table-cell;
+    vertical-align: top;
+  }
+  .pane-easyddb-search-ext-search-ext .submit-wrap {
+    width: 5%;
+    text-align: right;
+    padding-left: 10px;
+  }
+  .pane-easyddb-search-ext-search-ext .form-item {
+    display: table;
+    margin-bottom: 0;
+    width: 100%;
+  }
+  .pane-easyddb-search-ext-search-ext .form-item label,
+  .pane-easyddb-search-ext-search-ext .form-item select {
+    display: table-cell;
+  }
+  .pane-easyddb-search-ext-search-ext .form-item label {
+    padding-right: 10px;
+    width: 35%;
+  }
+}

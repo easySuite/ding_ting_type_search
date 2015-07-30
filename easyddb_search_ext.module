@@ -35,6 +35,7 @@ function easyddb_search_ext_block_view($delta = '') {
  * Form for search extension.
  */
 function easyddb_search_ext_form($form, &$form_state) {
+  drupal_add_css(drupal_get_path('module', 'easyddb_search_ext') . '/css/easyddb_search_ext.css', array('type' => 'file'));
   $form = array();
 
   $reservables = variable_get('ting_reservable_types', _ting_default_reservable_types());
