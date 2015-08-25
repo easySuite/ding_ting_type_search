@@ -3,14 +3,14 @@
 # LANGUAGE translation of Drupal (general)
 # Copyright YEAR NAME <EMAIL@ADDRESS>
 # Generated from files:
-#  easyddb_search_ext.module: n/a
-#  easyddb_search_ext.info: n/a
+#  profiles/ding2/modules/ding_ting_type_search/easyddb_search_ext.module: n/a
+#  profiles/ding2/modules/ding_ting_type_search/easyddb_search_ext.info: n/a
 #
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
-"POT-Creation-Date: 2015-02-19 16:15+0100\n"
+"POT-Creation-Date: 2015-07-28 11:38+0300\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Last-Translator: NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
@@ -19,31 +19,31 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: easyddb_search_ext.module:12 easyddb_search_ext.info:0
+#: profiles/ding2/modules/ding_ting_type_search/easyddb_search_ext.module:12 profiles/ding2/modules/ding_ting_type_search/easyddb_search_ext.info:0
 msgid "Search extension"
 msgstr ""
 
-#: easyddb_search_ext.module:26
+#: profiles/ding2/modules/ding_ting_type_search/easyddb_search_ext.module:26
 msgid "Search extention pane"
 msgstr ""
 
-#: easyddb_search_ext.module:51
+#: profiles/ding2/modules/ding_ting_type_search/easyddb_search_ext.module:51
 msgid "Search by type of material:"
 msgstr ""
 
-#: easyddb_search_ext.module:53
+#: profiles/ding2/modules/ding_ting_type_search/easyddb_search_ext.module:53
 msgid "Select a type"
 msgstr ""
 
-#: easyddb_search_ext.module:62
+#: profiles/ding2/modules/ding_ting_type_search/easyddb_search_ext.module:62
 msgid "Search"
 msgstr ""
 
-#: easyddb_search_ext.info:0
-msgid "Creates pane for search extension"
+#: profiles/ding2/modules/ding_ting_type_search/easyddb_search_ext.info:0
+msgid "Creates pane for search extension."
 msgstr ""
 
-#: easyddb_search_ext.info:0
+#: profiles/ding2/modules/ding_ting_type_search/easyddb_search_ext.info:0
 msgid "easyDDB"
 msgstr ""
 
