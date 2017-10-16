@@ -22,6 +22,13 @@ $font-size-larger:                       160%;
 
 
 // Standalone search container
+.content-wrapper {
+  .pane-easyddb-search-ext-search-ext {
+    .form-item {
+      max-width: 100%;
+    }
+  }
+}
 
 .pane-easyddb-search-ext-search-ext {
   overflow: hidden;
@@ -30,12 +37,8 @@ $font-size-larger:                       160%;
   background-color: $white;
 
   select {
-    height: 42px;
-    line-height: 42px;
-    -webkit-appearance: menulist-button;
-    min-width: 0;
+    -webkit-appearance: none;
     width: 100%;
-    max-width: 440px;
   }
 
   .submit-wrap {
@@ -47,6 +50,7 @@ $font-size-larger:                       160%;
   label {
     text-align: left;
     font-size: $font-size-larger;
+    vertical-align: middle;
   }
 
   // Media till-medium
