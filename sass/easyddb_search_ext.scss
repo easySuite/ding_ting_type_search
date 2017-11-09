@@ -48,7 +48,6 @@ $font-size-larger:                       160%;
   }
 
   // Media tablet
-
   @include media($tablet) {
     label {
       margin-bottom: $medium-spacing;
@@ -56,11 +55,12 @@ $font-size-larger:                       160%;
   }
 
   // Media mobile
-
   @include media($mobile) {
-    .select-wrap .form-type-select label {
-      width: 100%;
-      display: block;
+    .select-wrap {
+      .form-type-select label {
+        width: 100%;
+        display: block;
+      }
     }
   }
 
