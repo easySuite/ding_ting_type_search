@@ -1,25 +1,18 @@
-@import "_mixins";
+@import "../../../themes/ddbasic/sass/_base.scss";
 @import "susy";
 
 /* Spacing variables
    ========================================================================== */
-
 $large-spacing:                   20px;
 $medium-spacing:                  10px;
 
-
 /* Colors variables
    ========================================================================== */
-
 $white:                   #fff;
-
 
 /* Font variables
    ========================================================================== */
-
 $font-size-larger:                       160%;
-
-
 
 // Standalone search container
 .content-wrapper {
@@ -43,7 +36,8 @@ $font-size-larger:                       160%;
 
   .submit-wrap {
     input {
-      @include min-height(42px);
+      min-height: 42px;
+      height: 42px;
     }
   }
 
@@ -53,50 +47,54 @@ $font-size-larger:                       160%;
     vertical-align: middle;
   }
 
-  // Media till-medium
-
-  @include till-medium() {
+  // Media tablet
+  @include media($tablet) {
     label {
       margin-bottom: $medium-spacing;
     }
   }
 
-  // Media from-medium
-
-  @include from-medium() {
-
-    form > div {
-      display: table;
-      width: 100%;
-      text-align: right;
+  // Media mobile
+  @include media($mobile) {
+    .select-wrap {
+      .form-type-select label {
+        width: 100%;
+        display: block;
+      }
     }
+  }
 
-    .select-wrap,
-    .submit-wrap {
+  form > div {
+    display: table;
+    width: 100%;
+    text-align: right;
+  }
+
+  .select-wrap,
+  .submit-wrap {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .submit-wrap {
+    width: 5%;
+    text-align: right;
+    padding-left: $medium-spacing;
+  }
+
+  .form-item {
+    display: table;
+    margin-bottom: 0;
+    width: 100%;
+
+    label,
+    select {
       display: table-cell;
-      vertical-align: top;
     }
 
-    .submit-wrap {
-      width: 5%;
-      text-align: right;
-      padding-left: $medium-spacing;
-    }
-
-    .form-item {
-      display: table;
-      margin-bottom: 0;
-      width: 100%;
-
-      label,
-      select {
-        display: table-cell;
-      }
-
-      label {
-        padding-right: $medium-spacing;
-        width: 35%;
-      }
+    label {
+      padding-right: $medium-spacing;
+      width: 35%;
     }
   }
 }
