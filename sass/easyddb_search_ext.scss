@@ -3,23 +3,16 @@
 
 /* Spacing variables
    ========================================================================== */
-
 $large-spacing:                   20px;
 $medium-spacing:                  10px;
 
-
 /* Colors variables
    ========================================================================== */
-
 $white:                   #fff;
-
 
 /* Font variables
    ========================================================================== */
-
 $font-size-larger:                       160%;
-
-
 
 // Standalone search container
 .content-wrapper {
@@ -43,7 +36,7 @@ $font-size-larger:                       160%;
 
   .submit-wrap {
     input {
-      min-height:42px;
+      min-height: 42px;
       height: 42px;
     }
   }
@@ -62,7 +55,7 @@ $font-size-larger:                       160%;
     }
   }
 
-  // Media tablet
+  // Media mobile
 
   @include media($mobile) {
     .select-wrap .form-type-select label {
