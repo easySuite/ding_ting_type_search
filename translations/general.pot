@@ -44,6 +44,6 @@ msgid "Creates pane for search extension."
 msgstr ""
 
 #: profiles/ding2/modules/ding_ting_type_search/easyddb_search_ext.info:0
-msgid "easyDDB"
+msgid "easyOPAC"
 msgstr ""
 
