@@ -1,98 +1,97 @@
-@import "_mixins";
+@import "../../../themes/ddbasic/sass/_base.scss";
 @import "susy";
 
 /* Spacing variables
    ========================================================================== */
-
 $large-spacing:                   20px;
 $medium-spacing:                  10px;
 
-
 /* Colors variables
    ========================================================================== */
-
 $white:                   #fff;
-
 
 /* Font variables
    ========================================================================== */
-
 $font-size-larger:                       160%;
 
-
-
 // Standalone search container
+.content-wrapper {
+  .pane-easyddb-search-ext-search-ext {
+    .form-item {
+      max-width: 100%;
+    }
+  }
+}
 
 .pane-easyddb-search-ext-search-ext {
   overflow: hidden;
-  margin: $large-spacing 0;
-  padding: $medium-spacing $large-spacing;
-  background-color: $white;
 
   select {
-    height: 42px;
-    line-height: 42px;
-    -webkit-appearance: menulist-button;
-    min-width: 0;
+    -webkit-appearance: none;
     width: 100%;
-    max-width: 440px;
   }
 
   .submit-wrap {
     input {
-      @include min-height(42px);
+      min-height: 42px;
+      height: 42px;
     }
   }
 
   label {
     text-align: left;
     font-size: $font-size-larger;
+    vertical-align: middle;
   }
 
-  // Media till-medium
-
-  @include till-medium() {
+  // Media tablet
+  @include media($tablet) {
     label {
       margin-bottom: $medium-spacing;
     }
   }
 
-  // Media from-medium
-
-  @include from-medium() {
-
-    form > div {
-      display: table;
-      width: 100%;
-      text-align: right;
+  // Media mobile
+  @include media($mobile) {
+    .select-wrap {
+      .form-type-select label {
+        width: 100%;
+        display: block;
+      }
     }
+  }
 
-    .select-wrap,
-    .submit-wrap {
+  form > div {
+    display: table;
+    width: 100%;
+    text-align: right;
+  }
+
+  .select-wrap,
+  .submit-wrap {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .submit-wrap {
+    width: 5%;
+    text-align: right;
+    padding-left: $medium-spacing;
+  }
+
+  .form-item {
+    display: table;
+    margin-bottom: 0;
+    width: 100%;
+
+    label,
+    select {
       display: table-cell;
-      vertical-align: top;
     }
 
-    .submit-wrap {
-      width: 5%;
-      text-align: right;
-      padding-left: $medium-spacing;
-    }
-
-    .form-item {
-      display: table;
-      margin-bottom: 0;
-      width: 100%;
-
-      label,
-      select {
-        display: table-cell;
-      }
-
-      label {
-        padding-right: $medium-spacing;
-        width: 35%;
-      }
+    label {
+      padding-right: $medium-spacing;
+      width: 35%;
     }
   }
 }
